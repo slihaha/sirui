@@ -9,9 +9,9 @@ const Hero = () => {
   return (
     <div>
       <div>
-          <Spotlight className='-top-40 -left-10 md:-left-32 md:-top-20 h-screen ' fill='white' />
-          <Spotlight className='top-10 left-full h-[80vh] w-[50vw] ' fill='purple' />
-          <Spotlight className='top-28 left-80 h-[80vh] w-[50vw]' fill='blue' />
+        <Spotlight className='-top-40 -left-10 md:-left-32 md:-top-20 h-screen ' fill='white' />
+        <Spotlight className='top-10 left-full h-[80vh] w-[50vw] ' fill='purple' />
+        <Spotlight className='top-28 left-80 h-[80vh] w-[50vw]' fill='blue' />
       </div>
 
       <div className="h-screen w-full bg-black-100 bg-grid-white/[0.03]  relative flex items-center justify-center">
@@ -20,27 +20,27 @@ const Hero = () => {
 
 
         <div className='relative z-20 felx flex-col items-center justify-center '>
-            <p className="text-center text-6xl sm:text-8xl font-bold  bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500 py-8">
-              Hi I&apos;m <span className='whitespace-nowrap '>Dianze Liu</span> 
-            </p>
-            <p className="text-center text-xl sm:text-4xl font-bold  bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500 py-8">
-              Master Science in Computer Science
-            </p>
-            
-            <TextGenerateEffect className='text-center text-[5px] md:text-[15px] ' filter={false} words='CS Scientist & Engineer & Entrepreneur | Passionate about Data Science & AI | MSCS, GATech | OSU Engineering Grad | IBM Certified in Machine Learning & Data Science | Seeking to leverage technical & business expertise to drive impactful solutions.' />
+          <p className="text-center text-6xl sm:text-8xl font-bold  bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500 py-8">
+            Hi I&apos;m <span className='whitespace-nowrap '>Dianze Liu</span>
+          </p>
+          <p className="text-center text-xl sm:text-4xl font-bold  bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500 py-8">
+            Applied Machine Learning Engineer
+          </p>
+
+          <TextGenerateEffect className='text-center text-[5px] md:text-[15px] ' filter={false} words='CS Scientist & Engineer & Entrepreneur | Passionate about AI | MSCS, GATech | OSU Engineering Grad | IBM Certified in Machine Learning & Data Science | Seeking to leverage technical & business expertise to drive impactful solutions.' />
 
 
-            <div className='flex justify-center items-center mt-10'>
-              <MagicButton text='Contact Me' icon={<NearMeIcon/>} position='right' />
-            </div>
+          <div className='flex justify-center items-center mt-10'>
+            <MagicButton text='Contact Me' icon={<NearMeIcon />} position='right' />
+          </div>
 
 
-        
+
         </div>
 
-        
+
       </div>
-      
+
 
 
     </div>
