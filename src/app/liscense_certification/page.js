@@ -48,7 +48,7 @@ const certifications = [
     credentialId: "6a024f3db5e155f078a4470f6589bcd4db84b8be02630c932ac6b960de7f10c1",
     skills: ["Artificial Intelligence (AI)", "Database Development", "Vector Search"],
     logo: WeaviateLogo,
-    category: "AI & ML",
+    category: ["AI & ML", "Databases & Graph"],
     logoBg: "bg-white p-2"
   },
   {
@@ -140,7 +140,11 @@ const LicensePage = () => {
 
   const filteredCerts = selectedCategory === "All"
     ? certifications
-    : certifications.filter(c => c.category === selectedCategory);
+    : certifications.filter(c =>
+        Array.isArray(c.category)
+          ? c.category.includes(selectedCategory)
+          : c.category === selectedCategory
+      );
 
   return (
     <div className="min-h-screen w-full bg-black-100 bg-grid-white/[0.03] relative flex flex-col items-center justify-start overflow-hidden text-white">
