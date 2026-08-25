@@ -31,7 +31,13 @@ const Hero = () => {
 
 
           <div className='flex justify-center items-center mt-10'>
-            <MagicButton text='Contact Me' icon={<NearMeIcon />} position='right' />
+            <a
+              href="https://www.linkedin.com/in/dianze-liu-bb7242116/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <MagicButton text='Contact Me' icon={<NearMeIcon />} position='right' />
+            </a>
           </div>
 
 
