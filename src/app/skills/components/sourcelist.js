@@ -1,9 +1,40 @@
-export const sourcelist1 = ["/logo/JavaScript.png"]
-export const sourcelist2 = ["/logo/react.png", "/logo/Next.js.png"]
-export const sourcelist3 = ["/logo/css.png", "/logo/TailwindCSS.png", "/logo/Material UI.png", "/logo/accerdity.png"]
-export const sourcelist4 = ["/logo/Express.png", "/logo/Node.js.png"]
-export const sourcelist5 = ["/logo/MongoDB.png", "/logo/SQL Developer.png", "/logo/MySQL.png", "/logo/Mongoose.js.png"]
-export const sourcelist6 = ["/logo/Python.png"]
-export const sourcelist7 = ["/logo/TensorFlow.png", "/logo/scikit-learn.png", "/logo/Keras.png"]
-export const sourcelist8 = ["/logo/C++ (CPlusPlus).png"]
-export const sourcelist9 = ["/logo/Java.png"]
+import JavaScriptLogo from '../../../../public/logo/JavaScript.png';
+import ReactLogo from '../../../../public/logo/react.png';
+import NextjsLogo from '../../../../public/logo/Next.js.png';
+import CssLogo from '../../../../public/logo/css.png';
+import TailwindLogo from '../../../../public/logo/TailwindCSS.png';
+import MaterialUILogo from '../../../../public/logo/Material UI.png';
+import AccerdityLogo from '../../../../public/logo/accerdity.png';
+import ExpressLogo from '../../../../public/logo/Express.png';
+import NodejsLogo from '../../../../public/logo/Node.js.png';
+import MongoDBLogo from '../../../../public/logo/MongoDB.png';
+import SQLLogo from '../../../../public/logo/SQL Developer.png';
+import MySQLLogo from '../../../../public/logo/MySQL.png';
+import MongooseLogo from '../../../../public/logo/Mongoose.js.png';
+import PythonLogo from '../../../../public/logo/Python.png';
+import PyTorchLogo from '../../../../public/logo/pytorch.svg';
+import TensorFlowLogo from '../../../../public/logo/TensorFlow.png';
+import ScikitLearnLogo from '../../../../public/logo/scikit-learn.png';
+import KerasLogo from '../../../../public/logo/Keras.png';
+import LangChainLogo from '../../../../public/logo/langchain.svg';
+import HuggingFaceLogo from '../../../../public/logo/huggingface.svg';
+import OpenAILogo from '../../../../public/logo/openai.svg';
+import WeaviateLogo from '../../../../public/logo/weaviate.svg';
+import Neo4jLogo from '../../../../public/logo/neo4j.svg';
+import DockerLogo from '../../../../public/logo/docker.svg';
+import DeepLearningAILogo from '../../../../public/logo/deeplearningai.svg';
+import CPlusPlusLogo from '../../../../public/logo/C++ (CPlusPlus).png';
+import JavaLogo from '../../../../public/logo/Java.png';
+
+export const sourcelist1 = [JavaScriptLogo];
+export const sourcelist2 = [ReactLogo, NextjsLogo];
+export const sourcelist3 = [CssLogo, TailwindLogo, MaterialUILogo, AccerdityLogo];
+export const sourcelist4 = [ExpressLogo, NodejsLogo];
+export const sourcelist5 = [MongoDBLogo, SQLLogo, MySQLLogo, MongooseLogo];
+export const sourcelist6 = [PythonLogo];
+export const sourcelist7 = [PyTorchLogo, TensorFlowLogo, ScikitLearnLogo, KerasLogo];
+export const sourcelist8 = [LangChainLogo, HuggingFaceLogo, OpenAILogo];
+export const sourcelist9 = [WeaviateLogo, Neo4jLogo];
+export const sourcelist10 = [DockerLogo, DeepLearningAILogo];
+export const sourcelist11 = [CPlusPlusLogo];
+export const sourcelist12 = [JavaLogo];
