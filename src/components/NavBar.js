@@ -34,7 +34,7 @@ function Navbar({ className }) {
               title="REAAI"
               href="https://algochurn.com"
               src="https://assets.aceternity.com/demos/algochurn.webp"
-              description="Prepare for tech interviews like never before."
+              description="Intelligent real estate assistant that guides buyers from smart property discovery to optimized open house routing."
             />
             <ProductItem
               title="Moonbeam"
