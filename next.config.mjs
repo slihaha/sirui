@@ -1,5 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+    output: 'export',
+    images: {
+        unoptimized: true,
+        domains: ['assets.aceternity.com'],
+    },
     webpack: (config, { isServer }) => {
         // Apply the SVGR loader to SVG files
         config.module.rules.push({
@@ -7,10 +12,7 @@ const nextConfig = {
           use: ['@svgr/webpack'],
         });
         return config;
-      },
-    images: {
-        domains: ['assets.aceternity.com'],
-      },
+    },
 };
 
 export default nextConfig;
