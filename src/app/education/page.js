@@ -22,12 +22,15 @@ const wmSkills = [
 ];
 
 const osuSkills = [
-  "Data Visualization",
-  "Quality Control",
-  "Lean Management",
-  "Data Analysis",
-  "Operations Engineering",
+  "Business Analytics",
+  "HR Information Systems (HRIS)",
   "PeopleSoft HRMS",
+  "Data Analysis & Reporting",
+  "Process Optimization",
+  "Operations Management",
+  "Data Visualization",
+  "Statistical Analysis",
+  "Employee Data Management",
   "Problem Solving"
 ];
 

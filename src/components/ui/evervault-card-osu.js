@@ -78,13 +78,11 @@ export function CardPattern({ mouseX, mouseY, randomString }) {
 }
 
 const words = [
-  "alloy", "analysis", "benchmark", "composite", 
-  "design", "dynamics", "efficiency", "evaluation", 
-  "fatigue", "fluid", "fracture", "impact", 
-  "material", "mechanics", "metrology", "performance", 
-  "process", "quality", "resilience", "specification", 
-  "stress", "strain", "sustainability", "testing", 
-  "thermal", "tolerance", "validation", "vibration"
+  "analytics", "peoplesoft", "hris", "workforce", 
+  "operations", "strategy", "metrics", "optimization", 
+  "reporting", "visualization", "dataManagement", "process", 
+  "analysis", "decisionMaking", "humanCapital", "efficiency", 
+  "compliance", "performance", "systems", "statistics"
 ];
 
 export const generateRandomString = (length) => {
