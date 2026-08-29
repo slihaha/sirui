@@ -13,28 +13,29 @@ import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 
 const publications = [
   {
-    title: "Between Gradient and Natural Gradient: A Continuum of LoRA Initializations",
-    authors: ["Dianze Liu", "Farshid Ghezelbash"],
-    authorHighlight: "Dianze Liu",
-    date: "July 28, 2026",
-    venue: "arXiv preprint arXiv:2607.26247",
-    arxivId: "arXiv:2607.26247",
-    arxivLink: "https://arxiv.org/abs/2607.26247",
-    pdfLink: "https://arxiv.org/pdf/2607.26247.pdf",
-    scholarCitation: "D Liu, F Ghezelbash - arXiv preprint arXiv:2607.26247, 2026",
-    bibtex: `@article{liu2026between,
-  title={Between Gradient and Natural Gradient: A Continuum of LoRA Initializations},
-  author={Liu, Dianze and Ghezelbash, Farshid},
-  journal={arXiv preprint arXiv:2607.26247},
-  year={2026}
+    title: "DS@GT at FinMMEval 2026 Task 2: FinNexus-Agentic Retrieval-Augmented Reranking Orchestration for Multilingual Financial Question Answering",
+    authors: ["Dianze Liu", "Sirui Li", "Shuyu Tian"],
+    authorHighlight: "Sirui Li",
+    date: "September 2026",
+    venue: "FinMMEval at CLEF 2026 (Working Notes)",
+    conferenceLocation: "Jena, Germany",
+    pdfLink: "https://clef-staging.pages.dev/paper204.pdf",
+    scholarCitation: "D Liu, S Li, S Tian - CLEF 2026 Working Notes, CEUR Workshop Proceedings, 2026",
+    bibtex: `@inproceedings{liu2026finnexus,
+  title={DS@GT at FinMMEval 2026 Task 2: FinNexus-Agentic Retrieval-Augmented Reranking Orchestration for Multilingual Financial Question Answering},
+  author={Liu, Dianze and Li, Sirui and Tian, Shuyu},
+  booktitle={CLEF 2026 Working Notes, CEUR Workshop Proceedings},
+  year={2026},
+  address={Jena, Germany}
 }`,
-    abstract: "Low-rank adaptation (LoRA) fine-tunes large pretrained models at a fraction of the cost of full fine-tuning, but its performance depends strongly on how the adapters are initialized. Recent schemes initialize the adapters from the downstream loss gradient: some project the raw gradient onto its top directions, while others first whiten it with an estimate of the loss curvature. We show that these seemingly distinct methods are points on a single continuum: a two-parameter family of preconditioned gradient initializations, which we call Unified LoRA (ULoRA), governed by a spectral whitening exponent and an Adam-like diagonal exponent. Sweeping this family under a full learning-rate search, we find that no single fixed preconditioning strength dominates: the best operating point is task-dependent and frequently lies strictly inside the family, away from the published endpoints. Treated as an upper bound of this family, a tuned ULoRA configuration matches or exceeds full fine-tuning on all five GLUE tasks with RoBERTa-base and is competitive with the strongest baselines on GSM8K with LLaMA-2-7B. Our deployable, search-free variant, ULoRA-Auto, selects per-layer exponents from measured spectral statistics, approaches this upper bound at no additional search cost, and ranks at or near the top among deployable LoRA methods. Our results show that a principled design space for LoRA initialization and curvature preconditioning should be treated as a tunable dimension rather than a fixed design decision.",
+    abstract: "Financial question answering and reasoning should not rely on a single information source. Financial knowledge is inherently heterogeneous, encompassing financial statements, market news, and multilingual discussions that offer diverse perspectives, interpretations, and insights on a given topic. Effectively aggregating these sources and selectively identifying the most relevant information to answer questions remains a significant engineering challenge. In this work, we introduce FinNexus, an agentic framework that decomposes this complex task into manageable stages and addresses them incrementally. We propose a multi-stage pipeline that combines semantic retrieval with a specialized reranking module, alongside an LLM-driven planner capable of Python-based tool execution for accurate numerical analysis. The system is developed and evaluated on the first multilingual financial question answering dataset, PolyFiQA. Experimental results demonstrate that our approach can generate high-quality, grounded responses to user queries while operating at less than 19% of the cost of flagship models.",
     highlights: [
-      "Unified Framework (ULoRA): Unifies raw gradient and curvature-whitened initializations into a continuous 2-parameter family.",
-      "Superior Performance: Matches or exceeds full fine-tuning on all 5 GLUE tasks with RoBERTa-base & competitive on GSM8K with LLaMA-2-7B.",
-      "ULoRA-Auto: Zero-search-cost deployable variant that dynamically adapts per-layer exponents from spectral statistics."
+      "FinNexus Multi-Stage Agentic Architecture: Decomposes complex financial QA into modular semantic retrieval, Python-based calculation, LLM-as-a-Judge verification, and synthesis stages orchestrated via LangGraph.",
+      "Multilingual Retrieval & Cross-Lingual Reranking: Direct multilingual embeddings in Weaviate combined with Voyage reranker and BM25 hybrid search across 5 languages (English, Chinese, Spanish, Japanese, Greek) on PolyFiQA.",
+      "Programmatic Numerical Reasoning: Eliminates arithmetic hallucinations by delegating numerical computations to a sandboxed Python execution environment, achieving 36.10% (Easy) and 31.64% (Expert) numerical accuracy.",
+      "Cost Efficiency at Enterprise Scale: Achieves superior domain-specific reasoning and recall while reducing total query token and monetary costs by over 81% ($0.0052 vs $0.0296 per query)."
     ],
-    tags: ["LoRA", "ULoRA", "LLM Fine-Tuning", "Natural Gradient", "Curvature Preconditioning", "Model Adaptation"]
+    tags: ["FinNexus", "Financial QA", "Agentic RAG", "Multilingual Retrieval", "LangGraph", "PolyFiQA", "CLEF 2026", "LLM-as-a-Judge"]
   }
 ];
 
@@ -67,7 +68,7 @@ const PublicationPage = () => {
             Publications & Research
           </p>
           <p className="text-neutral-400 text-sm sm:text-base max-w-2xl mx-auto mt-2">
-            Researching efficient foundation models and autonomous systems—spanning PEFT, LLM reasoning, and multi-agent architectures.
+            Research at the intersection of Agentic RAG, Multilingual Financial Question Answering, and Enterprise AI Systems.
           </p>
         </div>
 
@@ -155,12 +156,13 @@ const PublicationPage = () => {
               <div className="mt-6 pt-6 border-t border-white/10 flex flex-wrap items-center justify-between gap-4">
                 <div className="flex items-center gap-3 flex-wrap">
                   <Link
-                    href={pub.arxivLink}
+                    href={pub.pdfLink}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-purple-600 hover:bg-purple-500 text-white font-semibold text-xs transition-all shadow-[0_0_15px_rgba(168,85,247,0.3)] hover:shadow-[0_0_20px_rgba(168,85,247,0.5)]"
                   >
-                    <span>View on arXiv</span>
+                    <DescriptionIcon fontSize="small" />
+                    <span>View PDF Paper</span>
                     <LaunchIcon fontSize="small" />
                   </Link>
 
