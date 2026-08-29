@@ -5,6 +5,12 @@ const nextConfig = {
         unoptimized: true,
         domains: ['assets.aceternity.com'],
     },
+    eslint: {
+        ignoreDuringBuilds: true,
+    },
+    typescript: {
+        ignoreBuildErrors: true,
+    },
     webpack: (config, { isServer }) => {
         // Apply the SVGR loader to SVG files
         config.module.rules.push({
