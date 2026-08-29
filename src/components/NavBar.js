@@ -22,7 +22,7 @@ function Navbar({ className }) {
       <Menu setActive={setActive}>
         <Link href="/" className="text-white pr-4">Home</Link>
         <Link href="/publication" className="text-white pr-4">Publication</Link>
-        <MenuItem setActive={setActive} active={active} item="Profolios">
+        <MenuItem setActive={setActive} active={active} item="Portfolios">
           <div className="text-sm grid grid-cols-1 md:grid-cols-2 gap-10 p-4">
             <ProductItem
               title="Personal Stock Deck"

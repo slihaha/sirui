@@ -8,101 +8,190 @@ import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
 import CodeIcon from '@mui/icons-material/Code';
 import BusinessIcon from '@mui/icons-material/Business';
 import DirectionsCarIcon from '@mui/icons-material/DirectionsCar';
+import SchoolIcon from '@mui/icons-material/School';
+import TrendingUpIcon from '@mui/icons-material/TrendingUp';
+import AssessmentIcon from '@mui/icons-material/Assessment';
+import CorporateFareIcon from '@mui/icons-material/CorporateFare';
+import DevicesIcon from '@mui/icons-material/Devices';
 
-import GatechLogo from './gatech_logo.png';
-import ContinentalLogo from './continental_logo.png';
-import ReaaiLogo from './reaai_logo.png';
+// SVG Brand Badges
+const TikTokIcon = () => (
+  <svg className="w-8 h-8 fill-current text-white" viewBox="0 0 24 24">
+    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.9 2.9 0 0 1-2.9-2.88 2.9 2.9 0 0 1 2.9-2.89c.39 0 .76.08 1.1.22V9.16a6.34 6.34 0 0 0-1.1-.1 6.34 6.34 0 0 0-6.35 6.34 6.34 6.34 0 0 0 6.35 6.35 6.34 6.34 0 0 0 6.34-6.35V8.71a8.18 8.18 0 0 0 4.76 1.52v-3.4a4.85 4.85 0 0 1-1-.14z" />
+  </svg>
+);
+
+const WalmartIcon = () => (
+  <svg className="w-8 h-8 fill-current text-yellow-400" viewBox="0 0 24 24">
+    <path d="M12 2a1.5 1.5 0 0 1 1.5 1.5V7a1.5 1.5 0 0 1-3 0V3.5A1.5 1.5 0 0 1 12 2zm0 15a1.5 1.5 0 0 1 1.5 1.5V22a1.5 1.5 0 0 1-3 0v-3.5A1.5 1.5 0 0 1 12 17zm7.794-9.206a1.5 1.5 0 0 1 .439 2.071l-2.5 4.33a1.5 1.5 0 1 1-2.598-1.5l2.5-4.33a1.5 1.5 0 0 1 2.159-.571zM6.866 14.866a1.5 1.5 0 0 1 .439 2.071l-2.5 4.33a1.5 1.5 0 0 1-2.598-1.5l2.5-4.33a1.5 1.5 0 0 1 2.159-.571zm12.353 5.428a1.5 1.5 0 0 1-2.071.439l-4.33-2.5a1.5 1.5 0 1 1 1.5-2.598l4.33 2.5a1.5 1.5 0 0 1 .571 2.159zM4.781 7.206a1.5 1.5 0 0 1-2.071.439l-4.33-2.5A1.5 1.5 0 0 1-.12 2.547l4.33 2.5a1.5 1.5 0 0 1 .571 2.159z" />
+  </svg>
+);
 
 const experiences = [
   {
-    company: "Design Intelligence Lab at GaTech",
-    role: "Researcher",
-    location: "Atlanta, GA",
-    period: "2026 - Present",
-    logo: GatechLogo,
-    logoClassName: "scale-105",
-    fallbackIcon: <WorkIcon fontSize="medium" />,
+    company: "TikTok",
+    role: "Product Manager, People Technology & HR Strategy",
+    subRoles: [
+      { title: "HR Policy and Strategy", period: "Nov 2025 - Present" },
+      { title: "Product Manager, People Technology", period: "Aug 2022 - Present" }
+    ],
+    location: "San Jose, California, United States",
+    period: "Aug 2022 - Present · 4 yrs 1 mo",
+    badgeBg: "bg-gradient-to-tr from-[#00f2fe]/20 to-[#4facfe]/20 border-cyan-500/40 text-cyan-300",
+    fallbackIcon: <TikTokIcon />,
     highlights: [
       {
-        title: "Jill Watson (AI Virtual Teaching Assistant)",
-        description: "Enhanced conversational AI pipeline by improving RAG-based retrieval and response generation, incorporating agentic workflows for dynamic task handling, and deploying models as scalable services; increased answer relevance, reduced hallucinations, and improved robustness to unsafe or off-topic inputs."
+        title: "People Technology Product Management",
+        description: "Direct end-to-end product strategy, feature roadmap, and technical execution for enterprise People Technology systems, delivering resilient, scalable digital solutions for thousands of global employees."
       },
       {
-        title: "HALT (Hallucination Detection)",
-        description: "Developed a framework to detect hallucinations using token-level log-probability signals and semantic drift modeled as a time-series; improved real-time model performance through quantization, reducing latency while maintaining accuracy."
+        title: "HR Policy & Strategy",
+        description: "Spearhead global HR policy frameworks, workforce governance models, and strategic initiatives to streamline cross-functional workflows and align enterprise operations across global teams."
       },
       {
-        title: "Multiple Platform Integration",
-        description: "Supporting LTI-based deployment across LMS platforms (Canvas, Blackboard, EdStem), including model deployment, API orchestration, and AWS-based computation and data pipeline management."
+        title: "Data-Driven Decision Making & Automation",
+        description: "Leverage advanced workforce analytics, usage metrics, and employee sentiment signals to optimize system adoption, eliminate operational bottlenecks, and drive continuous process automation."
       },
       {
-        title: "MultiHop Question Answering (Agentic Workflow)",
-        description: "Developing agentic QA pipelines for textbook problem solving, leveraging LangGraph/LangSmith to decompose complex university-level questions into guided structured solutions."
-      },
-      {
-        title: "Integration at Scale",
-        description: "Collaborating on the university-wide deployment of the Jill Watson AI, scaling server architectures to maintain real-time performance during demand spikes."
+        title: "Cross-Functional Leadership",
+        description: "Collaborate closely with engineering, UX design, legal, HR business partners, and executive leadership to translate complex organizational needs into high-impact software products."
       }
     ],
-    skills: ["RAG", "Agentic Workflows", "LangGraph", "LangSmith", "AWS", "Quantization", "LTI", "Python", "LLMs"]
+    skills: ["Product Management", "People Technology", "HR Policy & Strategy", "Business Strategy", "Data-Driven Decision Making", "Cross-Functional Leadership", "Enterprise HRIS", "Workflow Automation"]
   },
   {
-    company: "REAAI",
-    role: "Co-Founder / CTO",
-    location: "San Jose, CA",
-    period: "2024 - Present",
-    logo: ReaaiLogo,
-    logoClassName: "scale-105",
-    fallbackIcon: <BusinessIcon fontSize="medium" />,
+    company: "Start-up Auto Business",
+    role: "Entrepreneur & Shop Manager",
+    location: "Columbus, Ohio Metropolitan Area",
+    period: "Jun 2020 - Aug 2022 · 2 yrs 3 mos",
+    badgeBg: "bg-gradient-to-tr from-amber-500/20 to-orange-500/20 border-amber-500/40 text-amber-300",
+    fallbackIcon: <DirectionsCarIcon fontSize="medium" className="text-amber-400" />,
     highlights: [
       {
-        title: "Machine Learning Model for Properties Recommendation",
-        description: "Designing machine learning models to personalize property recommendations using user preferences, geolocation, and browsing history; currently achieving 85% internal satisfaction rate in testing with data from the MLSListing API."
+        title: "Online Platform Design & Analytics (0 to 1)",
+        description: "Designed, built, and maintained the company website, Google Business, Yelp Business, Facebook presence, and Google Analytics tracking from scratch; attracted 1.5x customer volume beyond local resources and doubled monthly revenue in 3 months."
       },
       {
-        title: "Open House Trip Planner",
-        description: "Developed a feature to assist users in planning weekend visits to multiple open houses by identifying relevant listings based on user profiles and calculating the optimal route, ensuring users save 90% of their time on trip planning."
+        title: "Business Operations & Visitor Dashboards",
+        description: "Architected executive dashboards in Excel and Google Analytics to track monthly and yearly revenue, operating expenses, customer visit frequency, parts inventory, and technician labor efficiency; actively troubleshot operational bottlenecks with the repair manager."
+      },
+      {
+        title: "Growth & Profitability",
+        description: "Formulated end-to-end business strategy, pricing models, and digital marketing funnels that established a sustainable local market brand with high repeat customer loyalty."
       }
     ],
-    skills: ["Machine Learning", "Recommendation Systems", "Route Optimization", "MLSListing API", "Python", "System Architecture"]
+    skills: ["Business Strategy", "Product Marketing", "Google Analytics", "Operations Management", "Revenue Optimization", "P&L Management", "Customer Retention", "Executive Dashboards"]
   },
   {
-    company: "Fancy Car Auto Company",
-    role: "Co-Owner / Data Scientist",
-    location: "Columbus, OH",
-    period: "2019 - 2024",
-    fallbackIcon: <DirectionsCarIcon fontSize="medium" />,
+    company: "William & Mary (Mason School of Business)",
+    role: "Business Analytics Teaching Assistant",
+    location: "Williamsburg, Virginia",
+    period: "Jul 2019 - Jun 2020 · 1 yr",
+    badgeBg: "bg-gradient-to-tr from-emerald-500/20 to-teal-500/20 border-emerald-500/40 text-emerald-300",
+    fallbackIcon: <SchoolIcon fontSize="medium" className="text-emerald-400" />,
     highlights: [
       {
-        title: "Customer Segmentation & Analytics",
-        description: "Analyzed internal customer data and applied clustering algorithms to segment customers by demographics, preferences, and behaviors. This resulted in a 25% increase in customer satisfaction by enabling the company to tailor its product offerings to each group's specific needs."
+        title: "Graduate Business Analytics Course Support",
+        description: "Supported graduate instruction across core MSBA curriculum: Machine Learning, Database Management, Optimization, Big Data, Artificial Intelligence, Data Visualization, Heuristic Algorithms, and Statistics for Management."
       },
       {
-        title: "Customer Traffic Flow Prediction",
-        description: "Built models using web, demographic, and weather data (>80% accuracy), increasing billable hours by 20% and enabling ~$2M annual revenue through optimized resource allocation."
+        title: "Technical Coaching & Lab Mentorship",
+        description: "Coached graduate students through hands-on data modeling, algorithmic problem solving, relational database querying, and data visualization architectures."
       }
     ],
-    skills: ["Clustering", "Predictive Modeling", "Customer Analytics", "Revenue Optimization", "Data Science", "Python"]
+    skills: ["Machine Learning", "Database Management", "Optimization", "Big Data", "Artificial Intelligence", "Data Visualization", "Heuristic Algorithms", "Statistics for Management", "Python", "SQL"]
   },
   {
-    company: "Continental AG",
-    role: "Quality Engineer",
-    location: "Marysville, OH",
-    period: "2017 - 2019",
-    logo: ContinentalLogo,
-    logoClassName: "scale-[1.7] transform",
-    fallbackIcon: <WorkIcon fontSize="medium" />,
+    company: "Walmart",
+    role: "Data and Information System Specialist",
+    location: "Shenzhen, Guangdong, China",
+    period: "Jul 2017 - Jul 2018 · 1 yr 1 mo",
+    badgeBg: "bg-gradient-to-tr from-blue-500/20 to-indigo-500/20 border-blue-500/40 text-blue-300",
+    fallbackIcon: <WalmartIcon />,
     highlights: [
       {
-        title: "Quality System Improvement",
-        description: "Leveraged production history data and data analysis with SQL and Python (NumPy, Pandas, Matplotlib) to spot recurring quality failures, achieving the highest monthly quality targets for 8 consecutive months by identifying and addressing potential quality problems."
+        title: "People Analytics Dashboard",
+        description: "Built and deployed comprehensive People Analytics dashboards to deliver actionable workforce metrics and operational KPIs to corporate leadership."
       },
       {
-        title: "Data-Driven Quality Control",
-        description: "Analyzed physical and chemical testing data from the production line using Excel to handle over 1,000 data points daily, ensuring products meet ISO and company standards."
+        title: "Enterprise Scale Platforms (100,000+ Users)",
+        description: "Developed and managed an online community platform serving over 100,000+ employees across Walmart China and successfully rolled out the employee mobile e-learning platform."
+      },
+      {
+        title: "HR ERP Systems & SAP Database Optimization",
+        description: "Conducted core SAP database analysis and updates, audited training metrics, and restructured administrative access governance for enhanced system security and reliability."
+      },
+      {
+        title: "Global Platform Launch (WalmartOne)",
+        description: "Led the Walmart China HR technology team in international collaboration to launch the WalmartOne Global access platform; iteratively enhanced SAP systems based on internal stakeholder requirements."
       }
     ],
-    skills: ["Python", "SQL", "Pandas", "Matplotlib", "Quality Control", "ISO Standards", "Excel"]
+    skills: ["People Analytics", "SAP Core ERP", "WalmartOne Global", "HRIS", "System Launch", "Database Administration", "E-Mobile Learning", "Access Governance"]
+  },
+  {
+    company: "Greif, Inc.",
+    role: "Workday Data and System Analyst",
+    subRoles: [
+      { title: "Workday Data & System Analyst", period: "Sep 2016 - Jun 2017 · 10 mos" },
+      { title: "Workday Analyst Intern", period: "Jul 2016 - Sep 2016 · 3 mos" }
+    ],
+    location: "Delaware, Ohio",
+    period: "Jul 2016 - Jun 2017 · 1 yr",
+    badgeBg: "bg-gradient-to-tr from-purple-500/20 to-pink-500/20 border-purple-500/40 text-purple-300",
+    fallbackIcon: <CorporateFareIcon fontSize="medium" className="text-purple-400" />,
+    highlights: [
+      {
+        title: "Employee Engagement Analytics",
+        description: "Facilitated global employee engagement by conducting, analyzing, and synthesizing findings from the annual worldwide employee engagement survey to drive actionable workforce initiatives."
+      },
+      {
+        title: "Workday System Enhancement & User Feedback",
+        description: "Enhanced HR system effectiveness by centralizing and analyzing user feedback to guide system optimization, streamline workflows, and prioritize new features."
+      },
+      {
+        title: "Global Performance Review Project",
+        description: "Supported data architecture, system configuration, and execution for the enterprise-wide annual performance review rollout."
+      }
+    ],
+    skills: ["Workday", "HRIS", "Data-Driven Decision Making", "Employee Engagement Survey", "Performance Review", "System Enhancement", "Technology Management"]
+  },
+  {
+    company: "The Ohio State University",
+    role: "HR PeopleSoft Assistant",
+    subRoles: [
+      { title: "HR PeopleSoft Assistant in Education & Training Center", period: "Sep 2014 - May 2016 · 1 yr 9 mos" },
+      { title: "HR Assistant in HR Administration Office", period: "Sep 2014 - May 2015 · 9 mos" }
+    ],
+    location: "Columbus, Ohio",
+    period: "Sep 2014 - May 2016 · 1 yr 9 mos",
+    badgeBg: "bg-gradient-to-tr from-rose-500/20 to-red-500/20 border-rose-500/40 text-rose-300",
+    fallbackIcon: <SchoolIcon fontSize="medium" className="text-rose-400" />,
+    highlights: [
+      {
+        title: "PeopleSoft HRMS Administration",
+        description: "Maintained training and employee records in PeopleSoft HRMS, ensuring high data accuracy and regulatory compliance across university education and training programs."
+      },
+      {
+        title: "HR Administrative Operations",
+        description: "Supported employee onboarding, records management, and administrative workflows in the EHE HR Administrative Office with strong attention to detail and problem solving."
+      }
+    ],
+    skills: ["PeopleSoft", "HR Administration", "Technology Management", "Data Integrity", "Problem Solving", "Interpersonal Skills"]
+  },
+  {
+    company: "TCL Multimedia",
+    role: "Human Resources Intern",
+    location: "Shenzhen, Guangdong, China",
+    period: "May 2014 - Jun 2014 · 2 mos",
+    badgeBg: "bg-gradient-to-tr from-sky-500/20 to-blue-500/20 border-sky-500/40 text-sky-300",
+    fallbackIcon: <DevicesIcon fontSize="medium" className="text-sky-400" />,
+    highlights: [
+      {
+        title: "HR Operations & Talent Coordination",
+        description: "Supported talent acquisition workflows, candidate communication, campus recruiting logistics, and departmental documentation."
+      }
+    ],
+    skills: ["HR Operations", "Talent Coordination", "Problem Solving", "Interpersonal Skills"]
   }
 ];
 
@@ -127,7 +216,7 @@ const ExperiencePage = () => {
             Work Experience
           </p>
           <p className="text-neutral-400 text-sm sm:text-base max-w-2xl mx-auto mt-2">
-            A breakdown of my professional roles, leadership, research, and engineering achievements in AI, Machine Learning, and Data Science.
+            A comprehensive overview of my career in Product Management, People Technology, HR Policy & Strategy, Enterprise HRIS Systems, and Data-Driven Entrepreneurship.
           </p>
         </div>
 
@@ -144,19 +233,9 @@ const ExperiencePage = () => {
               {/* Role & Company Header */}
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-white/10">
                 <div className="flex items-center gap-4">
-                  {exp.logo ? (
-                    <div className="w-16 h-16 rounded-xl bg-white p-1 flex items-center justify-center shrink-0 shadow-md group-hover:scale-105 group-hover:ring-2 group-hover:ring-purple-500 transition-all overflow-hidden">
-                      <Image
-                        src={exp.logo}
-                        alt={`${exp.company} Logo`}
-                        className={`w-full h-full object-contain ${exp.logoClassName || ''}`}
-                      />
-                    </div>
-                  ) : (
-                    <div className="w-16 h-16 rounded-xl bg-purple-900/40 border border-purple-500/40 text-purple-300 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
-                      {exp.fallbackIcon}
-                    </div>
-                  )}
+                  <div className={`w-16 h-16 rounded-2xl border p-2 flex items-center justify-center shrink-0 shadow-lg group-hover:scale-105 transition-all ${exp.badgeBg}`}>
+                    {exp.fallbackIcon}
+                  </div>
 
                   <div>
                     <h2 className="text-xl sm:text-2xl font-bold text-white group-hover:text-purple-300 transition-colors">
@@ -165,6 +244,18 @@ const ExperiencePage = () => {
                     <span className="text-purple-400 font-semibold text-base sm:text-lg">
                       @ {exp.company}
                     </span>
+
+                    {/* Sub-roles if multiple periods */}
+                    {exp.subRoles && (
+                      <div className="mt-1.5 flex flex-wrap gap-x-4 gap-y-1 text-xs text-neutral-400">
+                        {exp.subRoles.map((sr, srIdx) => (
+                          <span key={srIdx} className="inline-flex items-center gap-1.5 bg-white/5 px-2.5 py-0.5 rounded-md border border-white/10">
+                            <span className="text-neutral-300 font-medium">{sr.title}</span>
+                            <span className="text-purple-400">({sr.period})</span>
+                          </span>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 </div>
 
@@ -195,10 +286,10 @@ const ExperiencePage = () => {
                 ))}
               </div>
 
-              {/* Technologies */}
+              {/* Technologies / Skills */}
               <div className="mt-8 pt-4 border-t border-white/5 flex flex-wrap items-center gap-2">
                 <span className="text-xs font-semibold text-neutral-400 flex items-center gap-1 mr-2">
-                  <CodeIcon fontSize="small" className="text-purple-400" /> Technologies:
+                  <CodeIcon fontSize="small" className="text-purple-400" /> Core Skills & Tools:
                 </span>
                 {exp.skills.map((skill, sIdx) => (
                   <span

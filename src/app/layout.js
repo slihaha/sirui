@@ -6,8 +6,8 @@ import NavBar from "../components/NavBar";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Dianze's Profolio",
-  description: "This is my personal portfolio website",
+  title: "Sirui Li | Product Manager & Strategy",
+  description: "Personal portfolio of Sirui Li — Product Manager in People Technology, HR Policy & Strategy, and Data-Driven Systems.",
 };
 
 export default function RootLayout({ children }) {

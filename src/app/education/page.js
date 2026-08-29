@@ -3,26 +3,32 @@ import React from 'react';
 import Image from 'next/image';
 import { Spotlight } from '../../components/ui/Sportlight';
 import { EvervaultCard, Icon } from "../../components/ui/evervault-card-osu.js";
-import { EvervaultCardGA } from "../../components/ui/evervault-card-gatech.js";
+import { EvervaultCardWM } from "../../components/ui/evervault-card-wm.js";
 import OSULOGO from "./Ohio_state_logo.png";
-import GATECH from "./Georgia_Tech_logo.png";
+import SchoolIcon from '@mui/icons-material/School';
+import MenuBookIcon from '@mui/icons-material/MenuBook';
+
+const wmSkills = [
+  "Machine Learning",
+  "Database Management",
+  "Optimization",
+  "Big Data",
+  "Artificial Intelligence",
+  "Data Visualization",
+  "Heuristic Algorithms",
+  "Statistics for Management",
+  "Predictive Analytics",
+  "Python & SQL"
+];
 
 const osuSkills = [
   "Data Visualization",
   "Quality Control",
   "Lean Management",
-  "Matlab",
   "Data Analysis",
-  "Materials Science"
-];
-
-const gaSkills = [
-  "Artificial Intelligence",
-  "Computer Vision",
-  "Computer System",
-  "SW Development",
-  "SDLC",
-  "SW Architecture"
+  "Operations Engineering",
+  "PeopleSoft HRMS",
+  "Problem Solving"
 ];
 
 const EducationPage = () => {
@@ -46,48 +52,58 @@ const EducationPage = () => {
             Education Background
           </h1>
           <p className="text-neutral-400 text-sm sm:text-base max-w-2xl mx-auto mt-2">
-            My academic foundation in Computer Science and Materials Science & Engineering.
+            Academic foundations combining advanced Business Analytics, Data Science, and Engineering Problem Solving.
           </p>
         </div>
 
         {/* Education Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-stretch justify-items-center max-w-5xl mx-auto">
-          {/* Georgia Tech Card */}
-          <div className="group relative border border-white/10 dark:border-white/20 bg-black/60 backdrop-blur-xl rounded-3xl p-6 sm:p-8 flex flex-col items-start w-full transition-all duration-300 hover:border-purple-500/50 hover:shadow-[0_0_30px_rgba(168,85,247,0.15)]">
+          {/* William & Mary Card */}
+          <div className="group relative border border-white/10 dark:border-white/20 bg-black/60 backdrop-blur-xl rounded-3xl p-6 sm:p-8 flex flex-col items-start w-full transition-all duration-300 hover:border-emerald-500/50 hover:shadow-[0_0_30px_rgba(16,185,129,0.15)]">
             <Icon className="absolute h-6 w-6 -top-3 -left-3 dark:text-white text-black" />
             <Icon className="absolute h-6 w-6 -bottom-3 -left-3 dark:text-white text-black" />
             <Icon className="absolute h-6 w-6 -top-3 -right-3 dark:text-white text-black" />
             <Icon className="absolute h-6 w-6 -bottom-3 -right-3 dark:text-white text-black" />
 
             {/* Top Accent Line */}
-            <div className="absolute top-0 left-8 right-8 h-[1px] bg-gradient-to-r from-transparent via-purple-500/30 to-transparent group-hover:via-purple-500/80 transition-all duration-500" />
+            <div className="absolute top-0 left-8 right-8 h-[1px] bg-gradient-to-r from-transparent via-emerald-500/30 to-transparent group-hover:via-emerald-500/80 transition-all duration-500" />
 
             {/* Interactive Evervault Header */}
             <div className="h-64 sm:h-72 w-full relative mb-6 rounded-2xl overflow-hidden">
-              <EvervaultCardGA text={<Image src={GATECH} alt="Georgia Tech Logo" className="w-24 h-24 object-contain" />} />
+              <EvervaultCardWM
+                text={
+                  <div className="flex flex-col items-center justify-center text-center px-4">
+                    <span className="text-3xl font-extrabold tracking-tight text-[#115740] dark:text-[#B9975B] font-serif">W&M</span>
+                    <span className="text-xs uppercase tracking-widest text-neutral-300 font-sans mt-1">Mason School of Business</span>
+                  </div>
+                }
+              />
             </div>
 
             {/* Info Body */}
             <div className="w-full flex flex-col justify-between flex-1">
               <div>
-                <h2 className="text-xl sm:text-2xl font-bold text-white group-hover:text-purple-300 transition-colors">
-                  Georgia Institute of Technology
+                <h2 className="text-xl sm:text-2xl font-bold text-white group-hover:text-emerald-300 transition-colors">
+                  William & Mary
                 </h2>
-                <h3 className="text-sm sm:text-base font-semibold text-purple-400 mt-1">
-                  Master of Science in Computer Science
+                <h3 className="text-sm sm:text-base font-semibold text-emerald-400 mt-1">
+                  Raymond A. Mason School of Business
                 </h3>
+                <p className="text-xs text-neutral-400 mt-1">
+                  Graduate Business Analytics & TA Mentorship
+                </p>
               </div>
 
               {/* Skills */}
               <div className="mt-6 pt-4 border-t border-white/10 w-full">
                 <p className="text-xs font-semibold text-neutral-400 mb-3 uppercase tracking-wider">
-                  Key Focus & Coursework
+                  Key Focus & Core Courses
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  {gaSkills.map((skill, index) => (
+                  {wmSkills.map((skill, index) => (
                     <span
                       key={index}
-                      className="text-xs px-3 py-1 rounded-full border border-white/10 bg-white/5 text-neutral-300 hover:border-purple-500/40 hover:text-white transition-colors"
+                      className="text-xs px-3 py-1 rounded-full border border-white/10 bg-white/5 text-neutral-300 hover:border-emerald-500/40 hover:text-white transition-colors"
                     >
                       {skill}
                     </span>
@@ -98,14 +114,14 @@ const EducationPage = () => {
           </div>
 
           {/* Ohio State Card */}
-          <div className="group relative border border-white/10 dark:border-white/20 bg-black/60 backdrop-blur-xl rounded-3xl p-6 sm:p-8 flex flex-col items-start w-full transition-all duration-300 hover:border-purple-500/50 hover:shadow-[0_0_30px_rgba(168,85,247,0.15)]">
+          <div className="group relative border border-white/10 dark:border-white/20 bg-black/60 backdrop-blur-xl rounded-3xl p-6 sm:p-8 flex flex-col items-start w-full transition-all duration-300 hover:border-rose-500/50 hover:shadow-[0_0_30px_rgba(244,63,94,0.15)]">
             <Icon className="absolute h-6 w-6 -top-3 -left-3 dark:text-white text-black" />
             <Icon className="absolute h-6 w-6 -bottom-3 -left-3 dark:text-white text-black" />
             <Icon className="absolute h-6 w-6 -top-3 -right-3 dark:text-white text-black" />
             <Icon className="absolute h-6 w-6 -bottom-3 -right-3 dark:text-white text-black" />
 
             {/* Top Accent Line */}
-            <div className="absolute top-0 left-8 right-8 h-[1px] bg-gradient-to-r from-transparent via-purple-500/30 to-transparent group-hover:via-purple-500/80 transition-all duration-500" />
+            <div className="absolute top-0 left-8 right-8 h-[1px] bg-gradient-to-r from-transparent via-rose-500/30 to-transparent group-hover:via-rose-500/80 transition-all duration-500" />
 
             {/* Interactive Evervault Header */}
             <div className="h-64 sm:h-72 w-full relative mb-6 rounded-2xl overflow-hidden">
@@ -115,24 +131,27 @@ const EducationPage = () => {
             {/* Info Body */}
             <div className="w-full flex flex-col justify-between flex-1">
               <div>
-                <h2 className="text-xl sm:text-2xl font-bold text-white group-hover:text-purple-300 transition-colors">
+                <h2 className="text-xl sm:text-2xl font-bold text-white group-hover:text-rose-300 transition-colors">
                   The Ohio State University
                 </h2>
-                <h3 className="text-sm sm:text-base font-semibold text-purple-400 mt-1">
-                  Bachelor of Science in Materials Science and Engineering
+                <h3 className="text-sm sm:text-base font-semibold text-rose-400 mt-1">
+                  Bachelor of Science & HR Systems
                 </h3>
+                <p className="text-xs text-neutral-400 mt-1">
+                  Engineering Foundations & PeopleSoft HR Administration
+                </p>
               </div>
 
               {/* Skills */}
               <div className="mt-6 pt-4 border-t border-white/10 w-full">
                 <p className="text-xs font-semibold text-neutral-400 mb-3 uppercase tracking-wider">
-                  Key Focus & Coursework
+                  Key Focus & Competencies
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {osuSkills.map((skill, index) => (
                     <span
                       key={index}
-                      className="text-xs px-3 py-1 rounded-full border border-white/10 bg-white/5 text-neutral-300 hover:border-purple-500/40 hover:text-white transition-colors"
+                      className="text-xs px-3 py-1 rounded-full border border-white/10 bg-white/5 text-neutral-300 hover:border-rose-500/40 hover:text-white transition-colors"
                     >
                       {skill}
                     </span>

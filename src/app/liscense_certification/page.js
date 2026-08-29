@@ -18,7 +18,7 @@ import DeepLearningAILogo from './deeplearningai.png';
 import GoogleLogo from './google.png';
 import UCDavisLogo from './ucdavis.png';
 
-const LINKEDIN_CERT_URL = "https://www.linkedin.com/in/dianze-liu-bb7242116/details/certifications/";
+const LINKEDIN_CERT_URL = "https://www.linkedin.com/in/siruili1111/details/certifications/";
 
 const certifications = [
   {

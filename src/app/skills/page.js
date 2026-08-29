@@ -18,147 +18,160 @@ import {
 
 const categories = [
   "All",
+  "Product & Strategy",
+  "People Technology & HRIS",
+  "Data Analytics & BI",
   "Artificial Intelligence",
-  "Core Languages",
-  "Frontend",
-  "Backend & Database",
-  "Cloud & MLOps"
+  "Web & Cloud"
 ];
 
 const SkillsPage = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
 
-  const Skeleton = ({ sources = [] }) => (
-    <div className="flex items-center justify-center w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-neutral-200 dark:from-neutral-900 dark:to-neutral-800 to-neutral-100 p-2">
-      <Stack direction="row" justifyContent="center" alignItems="center" gap={1.5} flexWrap="wrap">
-        {sources.map((source, index) => {
-          const imgSrc = typeof source === 'string' ? source : source?.src;
-          const IconComponent = typeof source === 'function' ? source : null;
+  const Skeleton = ({ sources = [], textList = [] }) => (
+    <div className="flex items-center justify-center w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-neutral-200 dark:from-neutral-900 dark:to-neutral-800 to-neutral-100 p-3">
+      {sources.length > 0 ? (
+        <Stack direction="row" justifyContent="center" alignItems="center" gap={1.5} flexWrap="wrap">
+          {sources.map((source, index) => {
+            const imgSrc = typeof source === 'string' ? source : source?.src;
+            const IconComponent = typeof source === 'function' ? source : null;
 
-          const isPyTorch = imgSrc?.includes('pytorch');
-          const isHuggingFace = imgSrc?.includes('huggingface');
-          const isAWS = imgSrc?.includes('aws');
-          const isMLflow = imgSrc?.includes('mlflow');
-          const isLangChain = imgSrc?.includes('langchain');
-          const isSQL = imgSrc?.includes('SQL') || imgSrc?.includes('sql');
+            const isPyTorch = imgSrc?.includes('pytorch');
+            const isHuggingFace = imgSrc?.includes('huggingface');
+            const isAWS = imgSrc?.includes('aws');
+            const isMLflow = imgSrc?.includes('mlflow');
+            const isLangChain = imgSrc?.includes('langchain');
+            const isSQL = imgSrc?.includes('SQL') || imgSrc?.includes('sql');
 
-          let avatarSize = sources.length > 3 ? 54 : (sources.length > 2 ? 66 : 76);
-          let padding = '4px';
-          let scale = 1;
+            let avatarSize = sources.length > 3 ? 54 : (sources.length > 2 ? 66 : 76);
+            let padding = '4px';
+            let scale = 1;
 
-          if (isPyTorch) {
-            scale = 1.15;
-            padding = '2px';
-          } else if (isHuggingFace) {
-            scale = 0.92;
-            padding = '5px';
-          } else if (isLangChain) {
-            scale = 1.1;
-            padding = '2px';
-          } else if (isMLflow) {
-            avatarSize = sources.length > 2 ? 72 : 82;
-            scale = 1.25;
-            padding = '2px';
-          } else if (isAWS) {
-            avatarSize = sources.length > 2 ? 68 : 78;
-            padding = '4px';
-          } else if (isSQL) {
-            scale = 0.82;
-            padding = '6px';
-          }
+            if (isPyTorch) {
+              scale = 1.15;
+              padding = '2px';
+            } else if (isHuggingFace) {
+              scale = 0.92;
+              padding = '5px';
+            } else if (isLangChain) {
+              scale = 1.1;
+              padding = '2px';
+            } else if (isMLflow) {
+              avatarSize = sources.length > 2 ? 72 : 82;
+              scale = 1.25;
+              padding = '2px';
+            } else if (isAWS) {
+              avatarSize = sources.length > 2 ? 68 : 78;
+              padding = '4px';
+            } else if (isSQL) {
+              scale = 0.82;
+              padding = '6px';
+            }
 
-          let avatarBg = '#333333';
+            let avatarBg = '#333333';
 
-          return (
-            <Avatar
-              variant="rounded"
-              key={index}
-              src={imgSrc}
-              imgProps={{
-                style: {
-                  objectFit: 'contain',
-                  transform: `scale(${scale})`
-                }
-              }}
-              sx={{
-                width: avatarSize,
-                height: avatarSize,
-                borderRadius: '50%',
-                bgcolor: avatarBg,
-                boxShadow: '0 4px 12px rgba(0, 0, 0, 0.25)',
-                p: padding
-              }}
+            return (
+              <Avatar
+                variant="rounded"
+                key={index}
+                src={imgSrc}
+                imgProps={{
+                  style: {
+                    objectFit: 'contain',
+                    transform: `scale(${scale})`
+                  }
+                }}
+                sx={{
+                  width: avatarSize,
+                  height: avatarSize,
+                  borderRadius: '50%',
+                  bgcolor: avatarBg,
+                  boxShadow: '0 4px 12px rgba(0, 0, 0, 0.25)',
+                  p: padding
+                }}
+              >
+                {IconComponent && <IconComponent className="w-full h-full object-contain" />}
+              </Avatar>
+            );
+          })}
+        </Stack>
+      ) : (
+        <div className="flex flex-wrap gap-2 justify-center items-center">
+          {textList.map((tag, tIdx) => (
+            <span
+              key={tIdx}
+              className="text-xs font-semibold px-3 py-1.5 rounded-xl border border-purple-500/30 bg-purple-950/40 text-purple-200 shadow-sm"
             >
-              {IconComponent && <IconComponent className="w-full h-full object-contain" />}
-            </Avatar>
-          );
-        })}
-      </Stack>
+              {tag}
+            </span>
+          ))}
+        </div>
+      )}
     </div>
   );
 
   const items = [
     {
-      title: "AI Frameworks & Libraries",
+      title: "Product Management & Strategy",
+      category: "Product & Strategy",
+      badge: "Product",
+      description: "Business Strategy, PRD Authoring, Roadmap Planning, Go-to-Market, Agile/Scrum",
+      header: <Skeleton textList={["Product Roadmap", "PRDs & Specs", "Cross-Functional Alignment", "User Feedback Loops", "Go-To-Market", "KPI Tracking"]} />,
+    },
+    {
+      title: "Enterprise People Tech & HRIS",
+      category: "People Technology & HRIS",
+      badge: "Enterprise HRIS",
+      description: "Workday, SAP Core Database, PeopleSoft HRMS, WalmartOne Global Access",
+      header: <Skeleton textList={["Workday HRIS", "SAP ERP Database", "PeopleSoft HRMS", "Access Governance", "Global Rollouts", "E-Learning Portals"]} />,
+    },
+    {
+      title: "People Analytics & BI Dashboards",
+      category: "Data Analytics & BI",
+      badge: "Analytics",
+      description: "Executive Dashboards, Employee Engagement Analytics, Google Analytics, Excel Modeling",
+      header: <Skeleton sources={sourcelist4} />,
+    },
+    {
+      title: "AI Frameworks & Machine Learning",
       category: "Artificial Intelligence",
       badge: "AI & ML",
-      description: "PyTorch, TensorFlow, Scikit-Learn",
+      description: "PyTorch, TensorFlow, Scikit-Learn, Optimization & Heuristic Algorithms",
       header: <Skeleton sources={sourcelist6} />,
     },
     {
       title: "LLM & GenAI Tools",
       category: "Artificial Intelligence",
-      badge: "GenAI",
-      description: "LangChain, Hugging Face",
+      badge: "GenAI & RAG",
+      description: "LangChain, Hugging Face, Vector Search Architectures",
       header: <Skeleton sources={sourcelist7} />,
     },
     {
-      title: "Vector DBs & Graph DBs",
-      category: "Artificial Intelligence",
-      badge: "RAG & Graph",
-      description: "Weaviate, Neo4j Vector Search",
-      header: <Skeleton sources={sourcelist8} />,
-    },
-    {
-      title: "Programming Languages",
-      category: "Core Languages",
-      badge: "Core CS",
-      description: "Python (8 Yrs), JavaScript (5 Yrs), C++ (3 Yrs), Java (1 Yr)",
+      title: "Programming & Query Languages",
+      category: "Data Analytics & BI",
+      badge: "Data & Code",
+      description: "Python (8 Yrs), SQL / MySQL, JavaScript, C++, R",
       header: <Skeleton sources={sourcelist5} />,
     },
     {
-      title: "React & Next.js",
-      category: "Frontend",
+      title: "React & Next.js Platforms",
+      category: "Web & Cloud",
       badge: "Frontend",
-      description: "5 Years Experience in Production Web Applications",
+      description: "Production Web Applications, Component Systems, Responsive UI",
       header: <Skeleton sources={sourcelist1} />,
     },
     {
-      title: "Styling & UI Systems",
-      category: "Frontend",
+      title: "Styling & Design Systems",
+      category: "Web & Cloud",
       badge: "UI / UX",
-      description: "CSS, Tailwind CSS, Material UI, Aceternity UI",
+      description: "Tailwind CSS, Material UI, Aceternity UI, Modern Glassmorphism",
       header: <Skeleton sources={sourcelist2} />,
     },
     {
-      title: "BackEnd Services & APIs",
-      category: "Backend & Database",
-      badge: "Backend",
-      description: "Express & Node.JS Microservices",
-      header: <Skeleton sources={sourcelist3} />,
-    },
-    {
-      title: "Database Systems",
-      category: "Backend & Database",
-      badge: "Databases",
-      description: "MongoDB, SQL, MySQL",
-      header: <Skeleton sources={sourcelist4} />,
-    },
-    {
-      title: "Cloud & MLOps Infrastructure",
-      category: "Cloud & MLOps",
-      badge: "Cloud & MLOps",
-      description: "AWS, Docker, MLflow",
+      title: "Cloud & DevOps Infrastructure",
+      category: "Web & Cloud",
+      badge: "Cloud",
+      description: "AWS, Docker, Microservices, MLflow",
       header: <Skeleton sources={sourcelist9} />,
     },
   ];

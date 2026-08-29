@@ -21,18 +21,22 @@ const Hero = () => {
 
         <div className='relative z-20 felx flex-col items-center justify-center '>
           <p className="text-center text-6xl sm:text-8xl font-bold  bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500 py-8">
-            Hi I&apos;m <span className='whitespace-nowrap '>Dianze Liu</span>
+            Hi I&apos;m <span className='whitespace-nowrap '>Sirui Li</span>
           </p>
           <p className="text-center text-xl sm:text-4xl font-bold  bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500 py-8">
-            Applied Machine Learning Engineer
+            Product Manager, People Technology & Strategy
           </p>
 
-          <TextGenerateEffect className='text-center text-[5px] md:text-[15px] ' filter={false} words='CS Scientist & Engineer & Entrepreneur | Passionate about AI | MSCS, GATech | OSU Engineering Grad | IBM Certified in Machine Learning & Data Science | Seeking to leverage technical & business expertise to drive impactful solutions.' />
+          <TextGenerateEffect
+            className='text-center text-[5px] md:text-[15px] '
+            filter={false}
+            words='Product Manager @ TikTok | People Technology & HR Strategy | Ex-Walmart, Greif | Entrepreneur & Data-Driven Strategist | M.S. in Business Analytics @ William & Mary | OSU Alum | Bridging Technology, Business Strategy & Enterprise HR Systems.'
+          />
 
 
           <div className='flex justify-center items-center mt-10'>
             <a
-              href="https://www.linkedin.com/in/dianze-liu-bb7242116/"
+              href="https://www.linkedin.com/in/siruili1111/"
               target="_blank"
               rel="noopener noreferrer"
             >
