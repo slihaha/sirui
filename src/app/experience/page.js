@@ -209,47 +209,47 @@ const ExperiencePage = () => {
       <div className="fixed pointer-events-none inset-0 flex items-center justify-center bg-black-100 [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] z-0" />
 
       {/* Main Experience Content Container */}
-      <div className="relative z-10 w-full pt-32 sm:pt-40 pb-20 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 w-full pt-24 sm:pt-36 pb-16 sm:pb-24 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-12 sm:mb-16">
-          <p className="text-center text-4xl sm:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500 py-4">
+        <div className="text-center mb-10 sm:mb-16">
+          <h1 className="text-center text-3xl sm:text-5xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500 py-2 sm:py-4">
             Work Experience
-          </p>
-          <p className="text-neutral-400 text-sm sm:text-base max-w-2xl mx-auto mt-2">
+          </h1>
+          <p className="text-neutral-400 text-xs sm:text-sm md:text-base max-w-2xl mx-auto mt-2 px-2">
             A comprehensive overview of my career in Product Management, People Technology, HR Policy & Strategy, Enterprise HRIS Systems, and Data-Driven Entrepreneurship.
           </p>
         </div>
 
         {/* Experience List */}
-        <div className="space-y-10">
+        <div className="space-y-6 sm:space-y-10">
           {experiences.map((exp, index) => (
             <div
               key={index}
-              className="group relative border border-white/10 dark:border-white/15 bg-black/60 backdrop-blur-xl rounded-2xl p-6 sm:p-8 transition-all duration-300 hover:border-purple-500/50 hover:shadow-[0_0_30px_rgba(168,85,247,0.15)]"
+              className="group relative border border-white/10 dark:border-white/15 bg-black/60 backdrop-blur-xl rounded-2xl p-4 sm:p-8 transition-all duration-300 hover:border-purple-500/50 hover:shadow-[0_0_30px_rgba(168,85,247,0.15)]"
             >
               {/* Top Accent Gradient Line */}
-              <div className="absolute top-0 left-8 right-8 h-[1px] bg-gradient-to-r from-transparent via-purple-500/30 to-transparent group-hover:via-purple-500/80 transition-all duration-500" />
+              <div className="absolute top-0 left-6 right-6 sm:left-8 sm:right-8 h-[1px] bg-gradient-to-r from-transparent via-purple-500/30 to-transparent group-hover:via-purple-500/80 transition-all duration-500" />
 
               {/* Role & Company Header */}
-              <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-white/10">
-                <div className="flex items-center gap-4">
-                  <div className={`w-16 h-16 rounded-2xl border p-2 flex items-center justify-center shrink-0 shadow-lg group-hover:scale-105 transition-all ${exp.badgeBg}`}>
+              <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 pb-4 sm:pb-6 border-b border-white/10">
+                <div className="flex items-start sm:items-center gap-3 sm:gap-4">
+                  <div className={`w-12 h-12 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl border p-1.5 sm:p-2 flex items-center justify-center shrink-0 shadow-lg group-hover:scale-105 transition-all ${exp.badgeBg}`}>
                     {exp.fallbackIcon}
                   </div>
 
-                  <div>
-                    <h2 className="text-xl sm:text-2xl font-bold text-white group-hover:text-purple-300 transition-colors">
+                  <div className="flex-1">
+                    <h2 className="text-lg sm:text-2xl font-bold text-white group-hover:text-purple-300 transition-colors leading-snug">
                       {exp.role}
                     </h2>
-                    <span className="text-purple-400 font-semibold text-base sm:text-lg">
+                    <span className="text-purple-400 font-semibold text-sm sm:text-lg block sm:inline">
                       @ {exp.company}
                     </span>
 
                     {/* Sub-roles if multiple periods */}
                     {exp.subRoles && (
-                      <div className="mt-1.5 flex flex-wrap gap-x-4 gap-y-1 text-xs text-neutral-400">
+                      <div className="mt-1.5 flex flex-wrap gap-1.5 sm:gap-2 text-[11px] sm:text-xs text-neutral-400">
                         {exp.subRoles.map((sr, srIdx) => (
-                          <span key={srIdx} className="inline-flex items-center gap-1.5 bg-white/5 px-2.5 py-0.5 rounded-md border border-white/10">
+                          <span key={srIdx} className="inline-flex items-center gap-1 bg-white/5 px-2 py-0.5 rounded-md border border-white/10">
                             <span className="text-neutral-300 font-medium">{sr.title}</span>
                             <span className="text-purple-400">({sr.period})</span>
                           </span>
@@ -259,24 +259,24 @@ const ExperiencePage = () => {
                   </div>
                 </div>
 
-                <div className="flex items-center gap-3 text-xs sm:text-sm text-neutral-400 flex-wrap">
-                  <div className="flex items-center gap-1 bg-neutral-900/80 px-3 py-1.5 rounded-full border border-white/10">
-                    <LocationOnIcon className="text-purple-400" fontSize="small" />
+                <div className="flex items-center gap-2 sm:gap-3 text-[11px] sm:text-xs text-neutral-400 flex-wrap">
+                  <div className="flex items-center gap-1 bg-neutral-900/80 px-2.5 py-1 rounded-full border border-white/10">
+                    <LocationOnIcon className="text-purple-400 text-xs" fontSize="inherit" />
                     <span>{exp.location}</span>
                   </div>
-                  <div className="flex items-center gap-1 bg-neutral-900/80 px-3 py-1.5 rounded-full border border-white/10">
-                    <CalendarTodayIcon className="text-purple-400" fontSize="small" />
+                  <div className="flex items-center gap-1 bg-neutral-900/80 px-2.5 py-1 rounded-full border border-white/10">
+                    <CalendarTodayIcon className="text-purple-400 text-xs" fontSize="inherit" />
                     <span>{exp.period}</span>
                   </div>
                 </div>
               </div>
 
               {/* Bullet Points */}
-              <div className="mt-6 space-y-4">
+              <div className="mt-4 sm:mt-6 space-y-3 sm:space-y-4">
                 {exp.highlights.map((item, hIdx) => (
-                  <div key={hIdx} className="flex items-start gap-3">
-                    <span className="mt-1.5 w-2 h-2 rounded-full bg-purple-500 shrink-0 group-hover:scale-125 transition-transform" />
-                    <div className="text-sm sm:text-base leading-relaxed text-neutral-300">
+                  <div key={hIdx} className="flex items-start gap-2.5 sm:gap-3">
+                    <span className="mt-1.5 w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-purple-500 shrink-0 group-hover:scale-125 transition-transform" />
+                    <div className="text-xs sm:text-sm md:text-base leading-relaxed text-neutral-300">
                       <strong className="text-white font-semibold">
                         {item.title}:
                       </strong>{" "}
@@ -287,14 +287,14 @@ const ExperiencePage = () => {
               </div>
 
               {/* Technologies / Skills */}
-              <div className="mt-8 pt-4 border-t border-white/5 flex flex-wrap items-center gap-2">
-                <span className="text-xs font-semibold text-neutral-400 flex items-center gap-1 mr-2">
-                  <CodeIcon fontSize="small" className="text-purple-400" /> Core Skills & Tools:
+              <div className="mt-6 sm:mt-8 pt-3 sm:pt-4 border-t border-white/5 flex flex-wrap items-center gap-1.5 sm:gap-2">
+                <span className="text-[11px] sm:text-xs font-semibold text-neutral-400 flex items-center gap-1 mr-1">
+                  <CodeIcon fontSize="inherit" className="text-purple-400" /> Core Skills:
                 </span>
                 {exp.skills.map((skill, sIdx) => (
                   <span
                     key={sIdx}
-                    className="text-xs px-3 py-1 rounded-full border border-white/10 bg-white/5 text-neutral-300 hover:border-purple-500/40 hover:text-white transition-colors"
+                    className="text-[11px] sm:text-xs px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full border border-white/10 bg-white/5 text-neutral-300 hover:border-purple-500/40 hover:text-white transition-colors"
                   >
                     {skill}
                   </span>

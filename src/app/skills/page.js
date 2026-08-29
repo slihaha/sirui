@@ -188,26 +188,26 @@ const SkillsPage = () => {
       </div>
 
       {/* Main Content */}
-      <div className="relative z-10 pt-36 sm:pt-44 md:pt-48 pb-24 text-white flex flex-col justify-center items-center w-full px-4 max-w-6xl mx-auto">
+      <div className="relative z-10 pt-24 sm:pt-40 pb-16 sm:pb-24 text-white flex flex-col justify-center items-center w-full px-4 max-w-6xl mx-auto">
         {/* Title Header */}
-        <div className="text-center mb-8">
-          <p className="text-center text-5xl sm:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500 py-4">
+        <div className="text-center mb-6 sm:mb-8">
+          <h1 className="text-center text-3xl sm:text-5xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500 py-2 sm:py-4">
             Technical Stack
-          </p>
-          <p className="text-neutral-400 text-sm sm:text-base max-w-2xl mx-auto">
-            Categorized technical capabilities spanning Artificial Intelligence, GenAI & RAG, High-Performance Systems, Web Development, and MLOps.
+          </h1>
+          <p className="text-neutral-400 text-xs sm:text-sm md:text-base max-w-2xl mx-auto px-2">
+            Categorized capabilities spanning Product Strategy, People Technology & HRIS, Data Analytics & BI, AI & Machine Learning, and Web & Cloud Platforms.
           </p>
         </div>
 
         {/* Category Filter Tabs */}
-        <div className="flex flex-wrap items-center justify-center gap-2 mb-12">
+        <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 mb-8 sm:mb-12 px-2">
           {categories.map((cat, idx) => (
             <button
               key={idx}
               onClick={() => setSelectedCategory(cat)}
-              className={`text-xs sm:text-sm px-4 py-2 rounded-full border transition-all duration-200 ${
+              className={`text-[11px] sm:text-xs md:text-sm px-3 py-1.5 sm:px-4 sm:py-2 rounded-full border transition-all duration-200 ${
                 selectedCategory === cat
-                  ? 'bg-purple-600 text-white border-purple-500 shadow-[0_0_15px_rgba(168,85,247,0.4)]'
+                  ? 'bg-purple-600 text-white border-purple-500 shadow-[0_0_15px_rgba(168,85,247,0.4)] font-medium'
                   : 'bg-black/40 text-neutral-400 border-white/10 hover:border-white/30 hover:text-white'
               }`}
             >
@@ -217,19 +217,19 @@ const SkillsPage = () => {
         </div>
 
         {/* BentoGrid with Category Badges */}
-        <BentoGrid className="w-full mx-auto md:auto-rows-[18.5rem]">
+        <BentoGrid className="w-full mx-auto auto-rows-auto md:auto-rows-[18.5rem] gap-4 sm:gap-6">
           {filteredItems.map((item, i) => (
             <BentoGridItem
               key={i}
               title={
                 <div className="flex items-center justify-between gap-2">
-                  <span>{item.title}</span>
-                  <span className="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded-full border border-purple-500/30 bg-purple-950/40 text-purple-300">
+                  <span className="text-sm sm:text-base font-bold text-neutral-100">{item.title}</span>
+                  <span className="text-[9px] sm:text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded-full border border-purple-500/30 bg-purple-950/40 text-purple-300 shrink-0">
                     {item.badge}
                   </span>
                 </div>
               }
-              description={item.description}
+              description={<span className="text-xs sm:text-sm text-neutral-400">{item.description}</span>}
               header={item.header}
               className={cn("[&>p:text-lg]", item.className)}
             />
